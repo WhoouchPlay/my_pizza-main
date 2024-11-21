@@ -1,0 +1,12 @@
+{# templates/index.html #}
+
+{% extends "base.html" %}
+
+{% block content %}
+<p>Прайс-Лист</p>
+<ol>
+    {% for pizza in pizzas|sort(attribute="price", reverse=True) %}
+    <li>{{ pizza.name }} - ₴{{ pizza.price }}</li>
+    {% endfor %}
+</ol>
+{% endblock content %}
